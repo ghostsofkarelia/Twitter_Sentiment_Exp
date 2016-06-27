@@ -29,7 +29,7 @@ def text_sentiment(string, dictionary):
 			sum_of_sentiments = sum_of_sentiments + int(dictionary[words])
 	return sum_of_sentiments
 
-"""Function to load tweets from a file"""
+"""Function to load tweets from a source"""
 def load_tweets(tweet):
 	tweet_dictionary = []
 	dictionary = {}
