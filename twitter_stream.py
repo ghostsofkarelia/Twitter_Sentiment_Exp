@@ -1,7 +1,8 @@
 from TwitterAPI import TwitterAPI #https://github.com/geduldig/TwitterAPI
 from flask import (
 Flask,
-request
+request,
+render_template
 )
 import json
 from tweet_sentiments import (
