@@ -51,7 +51,7 @@ def index():
 def aggregateTweets(name):	
 	tweets=query_twitter_search_API(name) #retrieved tweets from Twitter's search API
 	temp_tweets=load_tweets(tweets) #Created a list of tweet dict objects with relevant fields
-	sentiments=tweet_sentiments(temp_tweets,'AFINN-111.csv') #modify passed object to add sentiment
+	sentiments=tweet_sentiments(temp_tweets,'static/data/AFINN-111.csv') #modify passed object to add sentiment
 	return json.dumps(sentiments).encode('utf8') #encoding to include international characters
 	
 """Running an instance of the flask application"""
