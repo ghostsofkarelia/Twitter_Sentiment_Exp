@@ -37,7 +37,7 @@ def queryTwitterSearchAPI(SEARCH_TERM):
 	r = api.request('search/tweets', {'q': SEARCH_TERM, 'count':20}) #specifying search term and count of tweets obtained
 	for item in r:
 		if 'text' in item: #Only if it is has a text field
-			tweets.append(item) #replace above line with this for windows
+			tweets.append(item) 
 	return tweets
 	
 """Default route. Called to render Index.html"""	
