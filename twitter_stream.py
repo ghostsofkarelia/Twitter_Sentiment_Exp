@@ -31,7 +31,7 @@ api = TwitterAPI(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN_KEY, ACCESS_TOKEN_S
 	#r = api.request('statuses/filter', {'track': SEARCH_TERM})
 
 """Function to call Twitter's search API"""	
-def queryTwitterSearchAPI(SEARCH_TERM):
+def query_twitter_search_API(SEARCH_TERM):
 	tweets=[]
 	## search by search term
 	r = api.request('search/tweets', {'q': SEARCH_TERM, 'count':20}) #specifying search term and count of tweets obtained
@@ -48,7 +48,7 @@ def index():
 """To handle GET request with parameters"""	
 @app.route('/getData/<name>')
 def aggregateTweets(name):	
-	tweets=queryTwitterSearchAPI(name) #retrieved tweets from Twitter's search API
+	tweets=query_twitter_search_API(name) #retrieved tweets from Twitter's search API
 	temp_tweets=load_tweets(tweets) #Created a list of tweet dict objects with relevant fields
 	sentiment_tweet=tweet_sentiments(temp_tweets,'AFINN-111.csv') #modify passed object to add sentiment
 	return json.dumps(sentiment_tweet).encode('utf8') #encoding to include international characters
