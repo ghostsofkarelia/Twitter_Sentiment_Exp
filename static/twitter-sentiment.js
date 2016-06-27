@@ -15,7 +15,6 @@ var getData=function(name){
 }
 
 var showTweets=function(jsonObject){
-	debugger;
 	//Resetting the table
 	$('#tweetTable').empty();
 	for(var  i=0;i<jsonObject.length;i++)
